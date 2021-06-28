@@ -13,7 +13,9 @@ class VacanciesListInteractor: VacanciesListInteractorInput {
     private var query: VacanciesQuery?
     private var isLoading: Bool = false
     
-    private let loadingQueue = DispatchQueue.global(qos: .userInitiated)
+    private let loadingQueue = DispatchQueue(label: "com.gsavvin.vacancies.queue",
+                                             qos: .userInteractive,
+                                             attributes: .concurrent)
     
     init(vacanciesService: VacanciesServiceInterface) {
         self.vacanciesService = vacanciesService
@@ -21,20 +23,24 @@ class VacanciesListInteractor: VacanciesListInteractorInput {
     
     // MARK: InteractorInput
     
-    func loadVacancies(query: VacanciesQuery?) {
-        var runningQuery = query ?? self.query ?? VacanciesQuery()
-        
-        if (runningQuery == self.query) == false {
-            runningQuery.pagination = Pagination.defaultPagination
-            self.query = runningQuery
-        } else if self.isLoading {
-            return
-        }
-
-        self.loadVacancies(query: runningQuery)
+    func setQuery(_ query: VacanciesQuery) {
+        self.query = query
+        self.query?.pagination = Pagination.defaultPagination
     }
     
+    func loadVacancies() {
+        if let query = self.query {
+            self.loadVacancies(query: query)
+        }
+    }
+    
+    // MARK: Private
+    
     private func loadVacancies(query: VacanciesQuery) {
+        if self.isLoading {
+            return
+        }
+        
         self.isLoading = true
         
         self.loadingQueue.async {

@@ -29,7 +29,8 @@ class VacanciesListPresenter: VacanciesListModuleInput,
     
     func setQuery(_ query: VacanciesQuery) {
         self.viewModelsBuilder.clearCachedViewModels()
-        self.interactor.loadVacancies(query: query)
+        self.interactor.setQuery(query)
+        self.interactor.loadVacancies()
     }
 
     // MARK: ViewDelegate
@@ -39,14 +40,14 @@ class VacanciesListPresenter: VacanciesListModuleInput,
             .text: "архитектор",
             .areaId: 1,
         ]
-        let query = VacanciesQuery(parameters: parameters)
         
-        self.interactor.loadVacancies(query: query)
+        let query = VacanciesQuery(parameters: parameters)
+        self.setQuery(query)
     }
     
     func viewWillReachEndOfList() {
         if self.isLastPage == false {
-            self.interactor.loadVacancies(query: nil)
+            self.interactor.loadVacancies()
         }
     }
 

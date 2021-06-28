@@ -36,12 +36,14 @@ struct Vacancy: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         self.id = try container.decode(String.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.employer = try? container.decode(Throwable<Employer>.self, forKey: .employer).result.get()
-        self.area = try? container.decode(Throwable<Area>.self, forKey: .area).result.get()
-        self.snippet = try? container.decode(Throwable<Snippet>.self, forKey: .snippet).result.get()
-        self.salary = try? container.decode(Throwable<Salary>.self, forKey: .salary).result.get()
+        
+        self.employer = try? container.decode(Employer.self, forKey: .employer)
+        self.area = try? container.decode(Area.self, forKey: .area)
+        self.snippet = try? container.decode(Snippet.self, forKey: .snippet)
+        self.salary = try? container.decode(Salary.self, forKey: .salary)
     }
 }
 

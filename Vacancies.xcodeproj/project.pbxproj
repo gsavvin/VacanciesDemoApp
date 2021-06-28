@@ -38,7 +38,6 @@
 		34C8198A26879500003C9E76 /* NetworkServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C8198926879500003C9E76 /* NetworkServiceInterface.swift */; };
 		34C8198D26879628003C9E76 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C8198C26879628003C9E76 /* NetworkService.swift */; };
 		34C819922687AC52003C9E76 /* VacanciesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C819912687AC52003C9E76 /* VacanciesResponse.swift */; };
-		34C819962687B4DB003C9E76 /* Throwable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C819952687B4DB003C9E76 /* Throwable.swift */; };
 		34C8199A2687C47C003C9E76 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C819992687C47C003C9E76 /* Pagination.swift */; };
 		34E90E28268627B30058DDC7 /* ThrobberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E90E27268627B30058DDC7 /* ThrobberCollectionViewCell.swift */; };
 		34E90E2C268627EF0058DDC7 /* ThrobberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E90E2B268627EF0058DDC7 /* ThrobberViewModel.swift */; };
@@ -79,7 +78,6 @@
 		34C8198926879500003C9E76 /* NetworkServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceInterface.swift; sourceTree = "<group>"; };
 		34C8198C26879628003C9E76 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		34C819912687AC52003C9E76 /* VacanciesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacanciesResponse.swift; sourceTree = "<group>"; };
-		34C819952687B4DB003C9E76 /* Throwable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throwable.swift; sourceTree = "<group>"; };
 		34C819992687C47C003C9E76 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		34E90E27268627B30058DDC7 /* ThrobberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrobberCollectionViewCell.swift; sourceTree = "<group>"; };
 		34E90E2B268627EF0058DDC7 /* ThrobberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrobberViewModel.swift; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 			children = (
 				34C819912687AC52003C9E76 /* VacanciesResponse.swift */,
 				342B540B2683508300B945C5 /* VacanciesParser.swift */,
-				34C819952687B4DB003C9E76 /* Throwable.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -421,7 +418,6 @@
 				342B53E62683220100B945C5 /* VacanciesListRouter.swift in Sources */,
 				34C8198D26879628003C9E76 /* NetworkService.swift in Sources */,
 				34C8197E26877683003C9E76 /* VacanciesQuery.swift in Sources */,
-				34C819962687B4DB003C9E76 /* Throwable.swift in Sources */,
 				342B53DF2683220100B945C5 /* VacanciesListModuleInterface.swift in Sources */,
 				34C819862687889F003C9E76 /* VacanciesResult.swift in Sources */,
 				342B53FD2683369200B945C5 /* Vacancy.swift in Sources */,

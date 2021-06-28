@@ -7,7 +7,8 @@ import Foundation
 
 protocol VacanciesListInteractorInput: AnyObject {
     
-    func loadVacancies(query: VacanciesQuery?)
+    func setQuery(_ query: VacanciesQuery)
+    func loadVacancies()
 }
 
 
