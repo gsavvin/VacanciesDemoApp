@@ -14,7 +14,7 @@ class VacanciesListInteractor: VacanciesListInteractorInput {
     private var isLoading: Bool = false
     
     private let loadingQueue = DispatchQueue(label: "com.gsavvin.vacancies.queue",
-                                             qos: .userInteractive,
+                                             qos: .utility,
                                              attributes: .concurrent)
     
     init(vacanciesService: VacanciesServiceInterface) {
